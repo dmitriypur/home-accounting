@@ -34,31 +34,39 @@
 
 ### Аутентификация
 
-- `POST /api/register` - Регистрация
-- `POST /api/login` - Вход
-- `POST /api/logout` - Выход (требует токен)
-- `GET /api/user` - Получить данные пользователя (требует токен)
+- `POST /api/register` - Регистрация нового пользователя
+- `POST /api/login` - Вход в систему
+- `POST /api/logout` - Выход из системы
+- `GET /api/user` - Получение данных текущего пользователя
 
 ### Категории
 
-- `GET /api/categories` - Список категорий пользователя
-- `POST /api/categories` - Создать категорию
-- `GET /api/categories/{id}` - Получить категорию
-- `PUT /api/categories/{id}` - Обновить категорию
-- `DELETE /api/categories/{id}` - Удалить категорию
+- `GET /api/categories` - Получение всех категорий пользователя
+- `POST /api/categories` - Создание новой категории
+- `GET /api/categories/{id}` - Получение конкретной категории
+- `PUT /api/categories/{id}` - Обновление категории
+- `DELETE /api/categories/{id}` - Удаление категории
 
 ### Расходы
 
-- `GET /api/expenses` - Список расходов (с фильтрами)
-- `POST /api/expenses` - Создать расход
-- `GET /api/expenses/{id}` - Получить расход
-- `PUT /api/expenses/{id}` - Обновить расход
-- `DELETE /api/expenses/{id}` - Удалить расход
+- `GET /api/expenses` - Получение всех расходов пользователя
+- `POST /api/expenses` - Создание нового расхода
+- `GET /api/expenses/{id}` - Получение конкретного расхода
+- `PUT /api/expenses/{id}` - Обновление расхода
+- `DELETE /api/expenses/{id}` - Удаление расхода
 
-### Статистика и сводка
+### Доходы
 
-- `GET /api/stats` - Статистика по категориям и периодам
-- `GET /api/summary` - Сводные данные
+- `GET /api/incomes` - Получение всех доходов пользователя
+- `POST /api/incomes` - Создание нового дохода
+- `GET /api/incomes/{id}` - Получение конкретного дохода
+- `PUT /api/incomes/{id}` - Обновление дохода
+- `DELETE /api/incomes/{id}` - Удаление дохода
+
+### Статистика
+
+- `GET /api/summary` - Получение сводной статистики (расходы, доходы, баланс)
+- `GET /api/stats` - Получение детальной статистики за период (расходы, доходы, баланс)
 
 ## Тестовые данные
 

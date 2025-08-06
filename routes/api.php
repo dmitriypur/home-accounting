@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ExpenseController;
+use App\Http\Controllers\Api\IncomeController;
 use App\Http\Controllers\Api\StatsController;
 use App\Http\Controllers\Api\SummaryController;
 use Illuminate\Http\Request;
@@ -36,6 +37,9 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // Расходы
     Route::apiResource('expenses', ExpenseController::class);
+    
+    // Доходы
+    Route::apiResource('incomes', IncomeController::class);
     
     // Статистика
     Route::get('/stats', [StatsController::class, 'index']);

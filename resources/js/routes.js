@@ -3,6 +3,7 @@ import Register from './components/auth/Register.vue';
 import Dashboard from './components/Dashboard.vue';
 import Categories from './components/categories/Categories.vue';
 import Expenses from './components/expenses/Expenses.vue';
+import Incomes from './components/incomes/Incomes.vue';
 
 export default [
     {
@@ -33,6 +34,12 @@ export default [
         path: '/expenses',
         name: 'expenses',
         component: Expenses,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/incomes',
+        name: 'incomes',
+        component: Incomes,
         meta: { requiresAuth: true }
     }
 ];

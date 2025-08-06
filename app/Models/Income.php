@@ -6,19 +6,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Category extends Model
+class Income extends Model
 {
     protected $fillable = [
         'user_id',
-        'name',
-        'icon',
-        'color',
+        'category_id',
+        'amount',
+        'description',
+        'date',
     ];
 
     protected $casts = [
         'user_id' => 'integer',
+        'category_id' => 'integer',
+        'amount' => 'decimal:2',
+        'date' => 'date',
     ];
 
     public function user(): BelongsTo
@@ -26,13 +30,8 @@ class Category extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function expenses(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Expense::class);
-    }
-
-    public function incomes(): HasMany
-    {
-        return $this->hasMany(Income::class);
+        return $this->belongsTo(Category::class);
     }
 }
